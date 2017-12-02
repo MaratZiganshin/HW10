@@ -70,5 +70,6 @@ int main(void)
 {
     load_definitions("definitions.txt");
     process_queries("queries.txt");
+    system("pause");
     return EXIT_SUCCESS;
 }
