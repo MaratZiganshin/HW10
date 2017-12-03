@@ -14,8 +14,8 @@ public:
 
     //Дополнительное задание на звездочку(*), которое не отменяет основной реализации!
     //Можно ли сделать без обхода всего дерева вниз, а через указатель на parent...
-    //Part* parent;
-    //int count_howmanyUp(Part const* p);
+    Part* parent;
+    int count_howmanyUp(Part* const p);
 
     Part(std::string const& n) : name(n) {};
     void describe();

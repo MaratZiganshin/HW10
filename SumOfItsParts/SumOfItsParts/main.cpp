@@ -36,6 +36,7 @@ void howmany_query(string const &x, string const &y)
     Part* xp = partContainer.lookup(x);
     Part* yp = partContainer.lookup(y);
     cout << endl << y << " has " << yp->count_howmany(xp) << " " << x << endl;
+    cout << endl << y << " has " << yp->count_howmanyUp(xp) << " " << x << endl;
 }
 
 void process_queries(const char* filename)

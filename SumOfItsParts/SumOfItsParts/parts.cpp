@@ -20,6 +20,16 @@ int Part::count_howmany(Part const* p)
     return result;
 }
 
+int Part::count_howmanyUp(Part* const p)
+{
+    if (p == this)
+        return 1;
+    else if (!p->parent)
+        return 0;
+    else 
+        return p->parent->subparts[p] * count_howmanyUp(p->parent);
+}
+
 Part* NameContainer::lookup(std::string const &name)
 {
     if (name_map[name])
@@ -29,10 +39,12 @@ Part* NameContainer::lookup(std::string const &name)
     return newPart;
 }
 
+
 void NameContainer::add_part(std::string const &x, int q, std::string const &y)
 {
     Part* part1 = lookup(x);
     Part* part2 = lookup(y);
     part1->subparts[part2] = q;
+    part2->parent = part1;
 }
 
